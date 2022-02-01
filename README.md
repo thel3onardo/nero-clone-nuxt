@@ -1,4 +1,4 @@
-# nero-clone-nuxt
+# nero-clone-nuxt (still in development)
 
 ## Build Setup
 
