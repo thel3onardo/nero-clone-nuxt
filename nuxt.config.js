@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nero-clone-nuxt',
+    title: 'Nero',
     htmlAttrs: {
       lang: 'en',
     },
@@ -18,24 +18,40 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '~/plugins/directives.js'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/stylelint
-    '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['nuxt-material-design-icons'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  ssr: true,
+
+  buildDir: 'nuxt-dist',
+
+  extend(config, ctx) {
+      if (ctx.dev && ctx.isClient) {
+          config.module.rules.push({
+              enforce : 'pre',
+              test    : /\.(js|vue)$/,
+              loader  : 'eslint-loader',
+              exclude : /(node_modules)/,
+              options : {
+                  fix : true
+              }
+          });
+      }
+  }
 }
