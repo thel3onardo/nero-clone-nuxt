@@ -31,9 +31,9 @@
           <button
             class="px-10 py-3 rounded-3xl flex items-center transition-all"
             :class="{
-              'bg-white': current_item_num === 3 ? false : true,
-              'shadow-sm': current_item_num === 3 ? false : true,
-              'hover:shadow': current_item_num === 3 ? false : true,
+              'bg-white': !current_item_num === 3,
+              'shadow-sm': !current_item_num === 3,
+              'hover:shadow': !current_item_num === 3,
               'cursor-auto': current_item_num === 3,
               'opacity-30': current_item_num === 3,
             }"

@@ -3,7 +3,7 @@
 <template>
   <div>
     <header
-      class="container mx-auto mx-0 md:px-7 h-screen"
+      class="container mx-0 md:px-7 h-screen"
       style="max-height: 800px"
     >
       <NavBar />
@@ -36,7 +36,7 @@
       </transition>
     </header>
     <section class="container mx-auto py-20">
-      <div class="flex items-center grid grid-cols-5 w-11/12 mx-auto">
+      <div class="items-center grid grid-cols-5 w-11/12 mx-auto">
         <div
           v-for="partner in partners"
           :key="partner"

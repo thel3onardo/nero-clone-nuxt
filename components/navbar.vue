@@ -24,7 +24,7 @@
           Services
           <span class="material-icons text-blue-400">expand_more</span>
         </a>
-        <transition name="slideInBottom">
+        <transition name="slideInBottom" appear>
           <div
             v-if="ServicePopupOpened"
             class="absolute bottom-0 top-full grid grid-cols-2 gap-4 rounded-xl shadow-lg text-gray-700 h-40 px-5 py-8 bg-white"
@@ -95,7 +95,7 @@
           Company
           <span class="material-icons text-blue-400">expand_more</span>
         </a>
-        <transition name="slideInBottom">
+        <transition name="slideInBottom" appear>
           <div
             v-if="CompanyPopupOpened"
             class="absolute bottom-0 top-full grid grid-cols-2 gap-4 rounded-xl shadow-lg text-gray-700 h-24 p-5 bg-white"
